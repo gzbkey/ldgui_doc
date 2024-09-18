@@ -1,0 +1,9 @@
+version: 1
+sphinx:
+  configuration: doc_cn/source/conf.py
+
+formats:
+  - html
+
+python:
+  version: 3.7
