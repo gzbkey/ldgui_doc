@@ -1,6 +1,0 @@
-version: 1
-sphinx:
-  configuration: doc_cn/source/conf.py
-
-python:
-  version: 3.11.5
