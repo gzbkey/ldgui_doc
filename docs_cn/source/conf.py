@@ -7,9 +7,9 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'LingDongGUI'
-copyright = '2024, OuJianbo'
+copyright = '2024-2026, OuJianbo'
 author = 'OuJianbo'
-release = 'V0.1'
+release = 'V0.2'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
