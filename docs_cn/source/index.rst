@@ -7,7 +7,7 @@
 =========================
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
    :caption: 目录:
 
    简介.md
@@ -15,6 +15,6 @@
    移植.md
    上位机使用.md
    开发流程.md
-   控件使用.md
+   控件使用 <widget/index>
    系统功能.md
    贡献代码.md

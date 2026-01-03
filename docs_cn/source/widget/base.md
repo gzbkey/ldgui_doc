@@ -1,34 +1,6 @@
-# 控件使用
-<!--                                    ldTimer                              -->
-## 软件定时器
-ldgui内置的软件定时器
+# 通用函数
 
-|函数名称|说明|
-|---|---|
-|bool ldTimeOut(uint16_t ms, bool isReset)|简化调用版本|
-|bool ldTimeOut(uint16_t ms, bool isReset, ldTimer_t *pTimer)|自定义变量版；</br>*pTimer中，数据为0，自动开始;</br>*pTimer中，数据为1，强制停止|
-### 使用方法
-~~~c
-//1000ms循环触发
-if(ldTimeOut(1000,true))
-{
-}
-//1000ms一次性有效触发
-if(ldTimeOut(1000,false))
-{
-}
-~~~
-
-~~~c
-//自定义定时器变量
-ldTimer_t timer=0;//全局变量或局部static变量
-if(ldTimeOut(1000,true,&timer))
-{
-}
-~~~
-
-<!--                                    ldBase                               -->
-## 通用函数
+## 说明
 在ldBase.h中定义了一些通用函数，所有控件都可以直接使用这些函数
 
 |函数名称|说明|
@@ -62,41 +34,3 @@ if(ldTimeOut(1000,true,&timer))
 |int16_t ldBaseGetY(ldBase_t* ptWidget)|获取控件Y坐标|
 |int16_t ldBaseGetWidth(ldBase_t* ptWidget)|获取控件宽度|
 |int16_t ldBaseGetHeight(ldBase_t* ptWidget)|获取控件高度|
-
-<!--                                    ldWindow                              -->
-## window
-
-|函数名称|说明|
-|---|---|
-|ldWindow *ldWindowInit(nameId,parentNameId,x,y,width,height)|创建window控件|
-|ldWindowSetColor|设置window背景颜色|
-|ldWindowSetImage|设置window背景图片|
-
-### 使用方法
-ldgui中页面背景和window控件实际为image控件，但只能设置背景颜色或者背景图片
-
-~~~c
-#define ID_BG 0
-#define ID_WINDOW_0 1
-ldWindow *obj=ldWindowInit(ID_WINDOW_0,ID_BG,10,10,200,200);
-ldWindowSetColor(obj,ldColor(0xff,0xff,0xff));
-~~~
-
-<!--                                    ldImage                              -->
-## image
-
-|函数名称|说明|
-|---|---|
-|ldImage_t* ldImageInit(uint16_t nameId, uint16_t parentNameId, int16_t x, int16_t y, int16_t width, int16_t height, arm_2d_tile_t* ptImgTile, arm_2d_tile_t* ptMaskTile, bool isWindow)|创建image控件|
-|void ldImageSetBackgroundColor(ldImage_t *ptWidget,ldColor bgColor)|设置image背景颜色|
-|void ldImageSetImage(ldImage_t *ptWidget, arm_2d_tile_t* ptImgTile, arm_2d_tile_t* ptMaskTile)|设置image图片|
-|ldColor ldImageGetBackgroundColor(ldImage_t *ptWidget)|获取image背景颜色|
-
-~~~c
-#define ID_BG 0
-#define ID_IMAGE_0 1
-ldImage_t *obj=ldImageInit(ID_IMAGE_0,ID_BG,ID_WINDOW_0,10,10,200,200,&g_tImage,NULL,false);
-ldBaseSetCorner(obj,true);
-ldBaseSetSelectable(obj,true);
-~~~
-

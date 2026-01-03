@@ -14,7 +14,7 @@ release = 'V0.2'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ['recommonmark','sphinx_markdown_tables']
+extensions = ['myst_parser','sphinx_rtd_theme']
 
 templates_path = ['_templates']
 exclude_patterns = []
@@ -27,8 +27,7 @@ language = 'zh_CN'
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 
-from recommonmark.parser import CommonMarkParser
-source_parsers = {
-'.md': CommonMarkParser,
+source_suffix = {
+    '.rst': 'restructuredtext',
+    '.md': 'markdown',
 }
-source_suffix = ['.rst', '.md']

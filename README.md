@@ -7,6 +7,8 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple sphinx-rtd-theme
 
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple recommonmark
 
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -U myst-parser
+
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple sphinx_markdown_tables
 
 修改index.rst
